@@ -1,4 +1,4 @@
-class Zig1 < Formula
+class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
   url "https://ziglang.org/download/0.10.1/zig-0.10.1.tar.xz"
