@@ -35,8 +35,6 @@ class Zig < Formula
     args = ["-DZIG_STATIC_LLVM=ON"]
     args << "-DZIG_TARGET_MCPU=#{cpu}" if build.bottle?
 
-    # https://github.com/ziglang/zig/issues/15963
-    system "cp", "/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/usr/lib/libSystem.tbd", "./lib/libc/darwin/libSystem.14.tbd"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
