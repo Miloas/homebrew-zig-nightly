@@ -1,7 +1,7 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
-  url "https://ziglang.org/download/0.10.1/zig-0.10.1.tar.xz"
+  url "https://ziglang.org/download/0.11.0/zig-0.11.0.tar.xz"
   sha256 "69459bc804333df077d441ef052ffa143d53012b655a51f04cfef1414c04168c"
   license "MIT"
   head "https://github.com/ziglang/zig.git", branch: "master"
@@ -18,7 +18,7 @@ class Zig < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@16" => :build
+  depends_on "llvm@17" => :build
   depends_on macos: :big_sur # ziglang/zig#13313
   depends_on "zstd"
   uses_from_macos "ncurses"
