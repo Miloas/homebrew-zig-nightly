@@ -13,8 +13,15 @@ data = json.loads(res_body.decode("utf-8"))
 aarch64_macos = data["master"]["aarch64-macos"]
 x86_64_macos = data["master"]["x86_64-macos"]
 
+version = re.search(r"macos-aarch64-(.*?)-dev",aarch64_macos["tarball"]).group(1)
 
 content = open('Formula/zig.rb', "r", encoding="utf-8").read()
+content = re.sub(
+	r'version \".*?\"',
+	f'version \"{version}\"',
+    content,
+    flags=re.DOTALL
+)
 content = re.sub(
     r'arm\?\n +url \".*?\"\n +sha256 \".*?\"',
     f'arm?\n      url \"{aarch64_macos["tarball"]}\"\n      sha256 \"{aarch64_macos["shasum"]}\"',
