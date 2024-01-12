@@ -1,8 +1,10 @@
 name: Publish zig1
 
 on:
-  workflow_dispatch:
-
+  repository_dispatch:
+    types:
+    - cf
+    
 permissions:
   contents: write
 
