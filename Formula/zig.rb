@@ -10,7 +10,7 @@ class Zig < Formula
 
       def install
         bin.install "zig"
-        lib.install Dir["*"]
+        bin.install Dir["lib/*"]
       end
     end
     if Hardware::CPU.intel?
@@ -19,7 +19,7 @@ class Zig < Formula
 
       def install
         bin.install "zig"
-        lib.install Dir["*"]
+        bin.install Dir["lib/*"]
       end
     end
   end
