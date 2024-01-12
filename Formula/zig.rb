@@ -2,6 +2,7 @@ class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
   license "MIT"
+  version "0.12.0"
   
   on_macos do
     if Hardware::CPU.arm?
@@ -10,6 +11,7 @@ class Zig < Formula
 
       def install
         bin.install "zig"
+        # https://cvo-23052022.fly.dev/unable-to-find-zig-installation-directory-filenotfound/
         bin.install Dir["lib"]
       end
     end
@@ -19,6 +21,7 @@ class Zig < Formula
 
       def install
         bin.install "zig"
+        # https://cvo-23052022.fly.dev/unable-to-find-zig-installation-directory-filenotfound/
         bin.install Dir["lib"]
       end
     end
