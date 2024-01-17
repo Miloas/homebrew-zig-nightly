@@ -1,5 +1,6 @@
 # homebrew-zig-head
 
 ```sh
-brew install Miloas/zig1/zig 
+brew tap Miloas/zig-nightly
+brew install Miloas/zig-nightly/zig 
 ```
