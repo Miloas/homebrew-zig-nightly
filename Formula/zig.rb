@@ -2,12 +2,12 @@ class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
   license "MIT"
-  version "0.12.0-dev.3653+e45bdc6bd"
+  version "0.12.0-dev.3657+d23a8e83d"
   
   on_macos do
     if Hardware::CPU.arm?
-      url "https://ziglang.org/builds/zig-macos-aarch64-0.12.0-dev.3653+e45bdc6bd.tar.xz"
-      sha256 "e117606629effae977ba7f4f8740b8ab29cfa089127bf5fa4b7416a9659f8590"
+      url "https://ziglang.org/builds/zig-macos-aarch64-0.12.0-dev.3657+d23a8e83d.tar.xz"
+      sha256 "5f1fa838d7e003920c26c94c53d5f374fd8869063304d40b3fb9932dce166a25"
 
       def install
         bin.install "zig"
@@ -16,8 +16,8 @@ class Zig < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://ziglang.org/builds/zig-macos-x86_64-0.12.0-dev.3653+e45bdc6bd.tar.xz"
-      sha256 "078294763e9f43798e92518c854a4d92729782663f1879b4d914d6978834dd59"
+      url "https://ziglang.org/builds/zig-macos-x86_64-0.12.0-dev.3657+d23a8e83d.tar.xz"
+      sha256 "c4a3d3b5be0c330678cfed620860877548439836c88589cf0b12af42dab6af17"
 
       def install
         bin.install "zig"
