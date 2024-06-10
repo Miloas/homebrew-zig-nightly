@@ -3,7 +3,7 @@ class Zig < Formula
   homepage "https://ziglang.org/"
   license "MIT"
   version "0.14.0-dev.15+d4bc64038"
-  
+
   on_macos do
     if Hardware::CPU.arm?
       url "https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.15+d4bc64038.tar.xz"
@@ -27,6 +27,28 @@ class Zig < Formula
     end
   end
 
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.15+d4bc64038.tar.xz"
+      sha256 "0e96b554aafea13dff5d62a0bdc340ecfe4c62d32c3832ea943d781e4381fd3a"
+
+      def install
+        bin.install "zig"
+        lib.install Dir["lib/*"]
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://ziglang.org/builds/zig-linux-aarch64-0.14.0-dev.15+d4bc64038.tar.xz"
+      sha256 "e3e0f839e7d1bc134924f4a68d317e71bc5a36e856bf09eb2fa4e6f36c5a3c3f"
+
+      def install
+        bin.install "zig"
+        lib.install Dir["lib/*"]
+      end
+    end
+  end
+
   test do
     (testpath/"hello.zig").write <<~EOS
       const std = @import("std");
@@ -38,8 +60,6 @@ class Zig < Formula
     system "#{bin}/zig", "build-exe", "hello.zig"
     assert_equal "Hello, world!", shell_output("./hello")
 
-    # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
-    # ziglang/zig#10377
     ENV.delete "CPATH"
     (testpath/"hello.c").write <<~EOS
       #include <stdio.h>
