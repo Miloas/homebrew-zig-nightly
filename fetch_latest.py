@@ -42,15 +42,17 @@ content = re.sub(
 )
 
 content = re.sub(
-    r'arm\?\n +url \".*?linux.*?\"\n +sha256 \".*?\"',
-    f'arm?\n      url \"{aarch64_linux["tarball"]}\"\n      sha256 \"{aarch64_linux["shasum"]}\"',
+    r'arm\? #Linux arm\n +url \".*?linux.*?\"\n +sha256 \".*?\"',
+    f'arm? #Linux arm\n      url \"{aarch64_linux["tarball"]}\"\n      sha256 \"{aarch64_linux["shasum"]}\"',
     content,
     flags=re.DOTALL
 )
 
+print(content)
+
 content = re.sub(
-    r'intel\?\n +url \".*?linux.*?\"\n +sha256 \".*?\"',
-    f'intel?\n      url \"{x86_64_linux["tarball"]}\"\n      sha256 \"{x86_64_linux["shasum"]}\"',
+    r'intel\? #Linux intel\n +url \".*?linux.*?\"\n +sha256 \".*?\"',
+    f'intel? #Linux intel\n      url \"{x86_64_linux["tarball"]}\"\n      sha256 \"{x86_64_linux["shasum"]}\"',
     content,
     flags=re.DOTALL
 )
