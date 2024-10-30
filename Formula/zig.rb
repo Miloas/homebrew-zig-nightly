@@ -2,12 +2,12 @@ class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
   license "MIT"
-  version "0.14.0-dev.2074+3450809e3"
+  version "0.14.0-dev.2077+c39ba682e"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.2074+3450809e3.tar.xz"
-      sha256 "de6e6a3ef7f6b1f2a1f5ab1aa09b404c3b9d97efcc78c254650172c12bc07895"
+      url "https://ziglang.org/builds/zig-macos-aarch64-0.14.0-dev.2077+c39ba682e.tar.xz"
+      sha256 "45f32fba3ee44bc5c41508c443bf165209171f8b71f56760d82760d88be5cf42"
 
       def install
         bin.install "zig"
@@ -16,8 +16,8 @@ class Zig < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://ziglang.org/builds/zig-macos-x86_64-0.14.0-dev.2074+3450809e3.tar.xz"
-      sha256 "8e58d2bfc3d4d596ab58c9cac43feb4d052782b8a6c3c546116ff08d122abdbd"
+      url "https://ziglang.org/builds/zig-macos-x86_64-0.14.0-dev.2077+c39ba682e.tar.xz"
+      sha256 "2601ef75b27273309970a9fe74ae7dfebe5d3d94c277629f9bda0044df143742"
 
       def install
         bin.install "zig"
@@ -30,8 +30,8 @@ class Zig < Formula
 
   on_linux do
     if Hardware::CPU.intel? #Linux intel
-      url "https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.2074+3450809e3.tar.xz"
-      sha256 "1cb630ba37432ce7166c151993426d96fa41ece9df4511b8a14910d04803aa34"
+      url "https://ziglang.org/builds/zig-linux-x86_64-0.14.0-dev.2077+c39ba682e.tar.xz"
+      sha256 "35b5c98e18e9d8c4d9bd3415cfc4b8853dddcd68997df4f217a6039ee65e59d0"
 
       def install
         bin.install "zig"
@@ -39,8 +39,8 @@ class Zig < Formula
       end
     end
     if Hardware::CPU.arm? #Linux arm
-      url "https://ziglang.org/builds/zig-linux-aarch64-0.14.0-dev.2074+3450809e3.tar.xz"
-      sha256 "02d7b856838d57f3b86bbc8cebf8ab70161c7e49e69bb63ba3ac91ad2ce781ff"
+      url "https://ziglang.org/builds/zig-linux-aarch64-0.14.0-dev.2077+c39ba682e.tar.xz"
+      sha256 "d0342d35ad44a29a076ca4357ff726f58f7d50039d72308ad81114df50b6644c"
 
       def install
         bin.install "zig"
