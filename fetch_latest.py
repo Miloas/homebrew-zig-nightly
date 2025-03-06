@@ -14,7 +14,8 @@ x86_64_macos = data["master"]["x86_64-macos"]
 aarch64_linux = data["master"]["aarch64-linux"]
 x86_64_linux = data["master"]["x86_64-linux"]
 
-
+version_match = re.search(r"macos-aarch64-(.*?)\.(.*?)\.tar\.xz", aarch64_macos["tarball"])
+version = version_match.group(1)
 sha = data["master"]["src"]["shasum"][:9]
 version_hash = sha
 
