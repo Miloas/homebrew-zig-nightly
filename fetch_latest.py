@@ -14,7 +14,7 @@ x86_64_macos = data["master"]["x86_64-macos"]
 aarch64_linux = data["master"]["aarch64-linux"]
 x86_64_linux = data["master"]["x86_64-linux"]
 
-version_match = re.search(r"macos-aarch64-(.*?)-dev\.(.*?)\.tar\.xz", aarch64_macos["tarball"])
+version_match = re.search(r"macos-aarch64-(.*?)\.(.*?)\.tar\.xz", aarch64_macos["tarball"])
 version = version_match.group(1)
 version_hash = version_match.group(2)
 
@@ -22,7 +22,7 @@ content = open('Formula/zig.rb', "r", encoding="utf-8").read()
 
 content = re.sub(
     r'version \".*?\"',
-    f'version \"{version}-dev.{version_hash}\"',
+    f'version \"{version}.{version_hash}\"',
     content,
     flags=re.DOTALL
 )
