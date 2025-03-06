@@ -2,7 +2,7 @@ class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
   license "MIT"
-  version "0.14.0"
+  version "0.27fb5ee4f"
 
   on_macos do
     if Hardware::CPU.arm?
